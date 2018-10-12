@@ -27,4 +27,5 @@ describe('AddComponent', () => {
   //   const item:Task = {TaskId:123,TaskName:'Testtask',ParentName:'parenttest',Priority:10,SDate:new Date(2014,4,4) ,EDate:new Date(2014,4,4) ,flag:true}
   //   component.Add();
   //  });
+  
 });
