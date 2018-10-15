@@ -35,8 +35,12 @@ if(confirm('Do you want to add this record')){
 this._service.Add(this.item)
 .subscribe(i=>this.msg=i);
 console.log(this.msg);
-
 //this._router.navigateByUrl('view');  
+$('#Taskname').val('');
+$('#Priority').val('');
+$('#Sdate').val('');
+$('#Edate').val('');
+$('#Parenttask').val('');
 }
 }
 TaskName:string='';
@@ -47,13 +51,13 @@ Reset()
    //this.myform.reset;
    //this.myform.reset();
   //this.item.Task=this.text 
-  if(confirm('Do you want to reset values?')){
+  //if(confirm('Do you want to reset values?')){
   $('#Taskname').val('');
   $('#Priority').val('');
   $('#Sdate').val('');
   $('#Edate').val('');
   $('#Parenttask').val('');
-  }
+  //}
 }  
 // ResetForm(form : NgForm)
 // {

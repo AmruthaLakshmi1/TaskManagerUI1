@@ -8,19 +8,19 @@ import { Task } from 'src/app/Models/Task';
   providedIn: 'root'
 })
 export class SharedService {
-// url:string='http://localhost:53853/getall/';
-// url1:string='http://localhost:53853/getbytaskid';
-// url2:string='http://localhost:53853/updatebytaskid';
-// url3:string='http://localhost:53853/Addtask/'
-// url4:string='http://localhost:53853/Deletetask';
-// url5:string='http://localhost:53853/updateendtask';
+ url:string='http://localhost:53853/getall/';
+ url1:string='http://localhost:53853/getbytaskid';
+ url2:string='http://localhost:53853/updatebytaskid';
+ url3:string='http://localhost:53853/Addtask/'
+ url4:string='http://localhost:53853/Deletetask';
+ url5:string='http://localhost:53853/updateendtask';
 
-url:string='http://localhost/TaskManagerAPI/getall/';
-url1:string='http://localhost/TaskManagerAPI/getbytaskid';
-url2:string='http://localhost/TaskManagerAPI/updatebytaskid';
-url3:string='http://localhost/TaskManagerAPI/Addtask/'
-url4:string='http://localhost/TaskManagerAPI/Deletetask';
-url5:string='http://localhost/TaskManagerAPI/updateendtask';
+// url:string='http://localhost/TaskManagerAPI/getall/';
+// url1:string='http://localhost/TaskManagerAPI/getbytaskid';
+// url2:string='http://localhost/TaskManagerAPI/updatebytaskid';
+// url3:string='http://localhost/TaskManagerAPI/Addtask/'
+// url4:string='http://localhost/TaskManagerAPI/Deletetask';
+// url5:string='http://localhost/TaskManagerAPI/updateendtask';
 
   constructor(private _http:Http) { }
   GetAll():Observable<Task[]>

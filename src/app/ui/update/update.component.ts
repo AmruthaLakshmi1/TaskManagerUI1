@@ -14,6 +14,7 @@ export class UpdateComponent implements OnInit {
 TaskId:number;
 item:Task;
 list:Task[];
+list1:Task[];
 msg:any;
 rangevalue=0;
   constructor(private _service:SharedService, private _active:ActivatedRoute,private _router:Router) { 
@@ -21,7 +22,8 @@ rangevalue=0;
     //console.log(this.item.TaskId);  
     this._active.params.subscribe(k=>this.TaskId=k['TaskId']);
     this._service.Search(this.TaskId).subscribe(i=>this.item=i);
-    this._service.GetAll().subscribe(i=>this.list=i);   
+    //this._service.GetAll().subscribe(i=>this.list=i);  
+    this._service.GetAll().subscribe(i=>this.list1=i);  
        }
   ngOnInit() {    
   } 
@@ -29,11 +31,14 @@ rangevalue=0;
 {
 //Invoke angulsr
 if(confirm('Do you want to update this record ?')){
+  this._router.navigateByUrl('view');
 this._service.Edit(this.item)
-.subscribe(i=>this.list=i);
-console.log(this.msg);  
-
-this._router.navigateByUrl('view');  
+.subscribe(i=>
+  {
+    this._service.GetAll().subscribe(j=>this.list1=j);
+  }
+  );
+//console.log(this.msg); 
 
 }
 }
@@ -41,7 +46,7 @@ Cancel()
 {
   this._router.navigateByUrl('add');  
 }
-valueChanged(e) {
-  this.rangevalue = e.target.value;
-}
+// valueChanged(e) {
+//   this.rangevalue = e.target.value;
+// }
 }
