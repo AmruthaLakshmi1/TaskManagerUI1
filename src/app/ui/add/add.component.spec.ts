@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpModule} from '@angular/http';
 import { AddComponent } from './add.component';
 import { Task } from 'src/app/Models/task';
+import { FormsModule } from '@angular/forms';
 
 describe('AddComponent', () => {
   let component: AddComponent;
@@ -9,6 +10,8 @@ describe('AddComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports:[HttpModule,FormsModule],
+      providers:[FormsModule,HttpModule],
       declarations: [ AddComponent ]
     })
     .compileComponents();
@@ -23,9 +26,8 @@ describe('AddComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  // it('Add a task', () => {
-  //   const item:Task = {TaskId:123,TaskName:'Testtask',ParentName:'parenttest',Priority:10,SDate:new Date(2014,4,4) ,EDate:new Date(2014,4,4) ,flag:true}
-  //   component.Add();
-  //  });
-  
+  //  it('Add a task', () => {
+  //    const item:Task = {TaskId:123,TaskName:'Testtask',ParentName:'parenttest',Priority:10,Priorityto:10,SDate:new Date(2014,4,4) ,EDate:new Date(2014,4,4) ,flag:true}     
+  //    component.Add();   
+  //   });
 });

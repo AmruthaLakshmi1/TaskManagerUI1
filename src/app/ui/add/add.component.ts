@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Task } from 'src/app/Models/task';
 import { SharedService } from 'src/app/services/shared.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
-import {FormGroup} from '@angular/forms';
+import {FormGroup , FormsModule} from '@angular/forms';
+import {MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-add',
@@ -18,30 +19,26 @@ text:any;
 myform:FormGroup;
 rangevalue=0;
 showSuccessMessage:boolean;
+Recordadded:string;
+//modalTitle:string;
 
-  constructor(private _service:SharedService, private _router:Router) {
+constructor(private _service:SharedService, private _router:Router) {
     this.text='';
     this.item=new Task();
         this._service.GetAll()
-        .subscribe(i=>this.list=i);        
-   }
-  
+        .subscribe(i=>this.list=i);  
+       // this.modalTitle=data.modalTitle;
+   }  
   ngOnInit() {
   }
 Add()
 {
 //Invoke angulsr  
-if(confirm('Do you want to add this record')){
+//if(confirm('Do you want to add this record')){
 this._service.Add(this.item)
 .subscribe(i=>this.msg=i);
 console.log(this.msg);
-//this._router.navigateByUrl('view');  
-$('#Taskname').val('');
-$('#Priority').val('');
-$('#Sdate').val('');
-$('#Edate').val('');
-$('#Parenttask').val('');
-}
+this.Recordadded="Record addedd successfully";
 }
 TaskName:string='';
 Reset()
@@ -57,13 +54,10 @@ Reset()
   $('#Sdate').val('');
   $('#Edate').val('');
   $('#Parenttask').val('');
+  this.Recordadded='';
   //}
 }  
-// ResetForm(form : NgForm)
-// {
-//      form.reset();           
-// }  
-valueChanged(e) {
-  this.rangevalue = e.target.value;
-}
+// valueChanged(e) {
+//   this.rangevalue = e.target.value;
+// }
 }

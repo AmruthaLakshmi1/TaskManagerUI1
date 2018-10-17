@@ -19,7 +19,6 @@ table>tbody>tr>td{
  .col-md-1{
     width:  1.333333%;
 } 
-
 .row{
     padding: 10px;
 }
@@ -34,4 +33,7 @@ table>tbody>tr>td{
 }
 .priority{
     padding-left: 311px;
+}
+.lblcolor{
+    color: red;    
 }

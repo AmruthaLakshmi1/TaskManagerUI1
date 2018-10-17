@@ -6,5 +6,6 @@ export class Task {
      SDate:Date;
      EDate:Date;
      flag:boolean;
+     Priorityto:number;
 }
 

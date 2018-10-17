@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpModule} from '@angular/http'
 import { UpdateComponent } from './update.component';
+import { FormsModule } from '@angular/forms';
+import { httpFactory } from '@angular/http/src/http_module';
 
 describe('UpdateComponent', () => {
   let component: UpdateComponent;
@@ -8,6 +10,8 @@ describe('UpdateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports:[HttpModule,FormsModule],
+      providers:[HttpModule,FormsModule],
       declarations: [ UpdateComponent ]
     })
     .compileComponents();
@@ -19,7 +23,7 @@ describe('UpdateComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+   it('should create', () => {
+     expect(component).toBeTruthy();
+   });
 });

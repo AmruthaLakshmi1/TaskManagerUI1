@@ -3,6 +3,7 @@ import { Task } from 'src/app/Models/task';
 import { SharedService } from 'src/app/services/shared.service';
 import {ActivatedRoute} from '@angular/router';
 import{Router} from '@angular/router';
+import { Alert } from 'selenium-webdriver';
 
 
 @Component({
@@ -17,6 +18,7 @@ list:Task[];
 list1:Task[];
 msg:any;
 rangevalue=0;
+Recordadded:string;
   constructor(private _service:SharedService, private _active:ActivatedRoute,private _router:Router) { 
     this.item=new Task(); 
     //console.log(this.item.TaskId);  
@@ -30,20 +32,20 @@ rangevalue=0;
   Update()
 {
 //Invoke angulsr
-if(confirm('Do you want to update this record ?')){
-
+this.Recordadded="Record has been added successfully";
 this._service.Edit(this.item)
 .subscribe(i=>
   {
     this._service.GetAll().subscribe(j=>this.list1=j);
   }
-  );
-  this._router.navigateByUrl('view');
+  );  
+  //this._router.navigateByUrl('view');
 //console.log(this.msg); 
-}
+
 }
 Cancel()
 {
+  this.Recordadded="";
   this._router.navigateByUrl('add');  
 }
 // valueChanged(e) {

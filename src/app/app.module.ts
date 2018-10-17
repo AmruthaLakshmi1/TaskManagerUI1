@@ -26,7 +26,6 @@ const appRoutes:Routes=[
     AddComponent,
     UpdateComponent,
     ViewComponent,
-
   ],
   imports: [
     BrowserModule,FormsModule,RouterModule.forRoot(appRoutes),HttpModule,HttpClientModule

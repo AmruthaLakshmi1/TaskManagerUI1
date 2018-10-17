@@ -3,7 +3,11 @@
         <div class="row">
        <h4>Add a Task</h4>
    </div>
-   
+   <div class="row">
+        <div class="col-md-12">
+            <label  class="control-label lblcolor" >{{Recordadded}}</label>
+    </div> 
+   </div>
    <div class="row">
         <div class="col-md-4">
             <label  class="control-label">Task:</label>
@@ -22,7 +26,7 @@
             <label  class="control-label">Priority:</label>
         </div>              
           <div class="col-md-8">            
-             <input type="range" id='Priority' [(ngModel)]="item.Priority" class="form-control input-sm txtColor" min="0" max="30"  value="0" [ngModelOptions]="{standalone: true}" (input)="valueChanged($event)">            
+             <input type="range" id='Priority' [(ngModel)]="item.Priority" class="form-control input-sm txtColor" min="0" max="30"  value="0" [ngModelOptions]="{standalone: true}">            
           </div>                  
     </div>
 
@@ -32,7 +36,7 @@
         </div>    
           <div class="col-md-8">            
           <!-- <input type="text" [(ngModel)]="item.ParentTask" class="form-control input-sm txtColor"> -->
-         <select [(ngModel)]="item.ParentName" id='Parenttask' class="parenttask" [ngModelOptions]="{standalone: true}" (input)="valueChanged($event)">
+         <select [(ngModel)]="item.ParentName" id='Parenttask' class="parenttask" [ngModelOptions]="{standalone: true}" >
          <option class="form-control input-sm txtColor" [value]="item.TaskName" *ngFor="let item of list">{{item.TaskName}}</option>
             </select>
           </div>

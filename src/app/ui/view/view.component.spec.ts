@@ -1,6 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import { ViewComponent } from './view.component';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 describe('ViewComponent', () => {
   let component: ViewComponent;
@@ -8,6 +10,8 @@ describe('ViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports:[HttpModule,FormsModule],
+      providers:[HttpModule,FormsModule],
       declarations: [ ViewComponent ]
     })
     .compileComponents();
