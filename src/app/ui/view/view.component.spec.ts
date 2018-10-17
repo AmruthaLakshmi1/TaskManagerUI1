@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed} from '@angular/core/testing';
 import { ViewComponent } from './view.component';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ViewComponent', () => {
   let component: ViewComponent;
@@ -10,7 +11,7 @@ describe('ViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports:[HttpModule,FormsModule],
+      imports:[HttpModule,FormsModule,RouterTestingModule],
       providers:[HttpModule,FormsModule],
       declarations: [ ViewComponent ]
     })

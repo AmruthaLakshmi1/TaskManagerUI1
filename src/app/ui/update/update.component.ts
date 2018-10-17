@@ -32,7 +32,7 @@ Recordadded:string;
   Update()
 {
 //Invoke angulsr
-this.Recordadded="Record has been added successfully";
+this.Recordadded="Record has been updated successfully";
 this._service.Edit(this.item)
 .subscribe(i=>
   {

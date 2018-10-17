@@ -6,8 +6,10 @@ import * as $ from 'jquery';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
+
 })
 export class AppComponent implements OnInit {
+  title='MyAngular';
   ngOnInit()
   {   
        $(document).ready(function(){        

@@ -3,6 +3,8 @@ import {HttpModule} from '@angular/http';
 import { AddComponent } from './add.component';
 import { Task } from 'src/app/Models/task';
 import { FormsModule } from '@angular/forms';
+//import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AddComponent', () => {
   let component: AddComponent;
@@ -10,8 +12,8 @@ describe('AddComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports:[HttpModule,FormsModule],
-      providers:[FormsModule,HttpModule],
+      imports:[HttpModule,FormsModule,RouterTestingModule],
+      providers:[FormsModule,HttpModule,RouterTestingModule],
       declarations: [ AddComponent ]
     })
     .compileComponents();

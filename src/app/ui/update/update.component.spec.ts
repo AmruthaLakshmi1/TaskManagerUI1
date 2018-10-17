@@ -3,6 +3,7 @@ import {HttpModule} from '@angular/http'
 import { UpdateComponent } from './update.component';
 import { FormsModule } from '@angular/forms';
 import { httpFactory } from '@angular/http/src/http_module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('UpdateComponent', () => {
   let component: UpdateComponent;
@@ -10,7 +11,7 @@ describe('UpdateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports:[HttpModule,FormsModule],
+      imports:[HttpModule,FormsModule,RouterTestingModule],
       providers:[HttpModule,FormsModule],
       declarations: [ UpdateComponent ]
     })

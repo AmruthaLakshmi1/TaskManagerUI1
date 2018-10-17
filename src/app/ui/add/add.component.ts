@@ -43,11 +43,11 @@ this.Recordadded="Record addedd successfully";
 TaskName:string='';
 Reset()
 {
-   //console.log("Reset");       
-  // this.TaskName='';  
+   //console.log("Reset");
+  // this.TaskName='';
    //this.myform.reset;
    //this.myform.reset();
-  //this.item.Task=this.text 
+  //this.item.Task=this.text
   //if(confirm('Do you want to reset values?')){
   $('#Taskname').val('');
   $('#Priority').val('');
