@@ -43,7 +43,7 @@ this.Recordadded="Record addedd successfully";
 TaskName:string='';
 Reset()
 {
-   //console.log("Reset");
+   //console.log("Reset");       
   // this.TaskName='';
    //this.myform.reset;
    //this.myform.reset();
