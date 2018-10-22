@@ -33,12 +33,36 @@ constructor(private _service:SharedService, private _router:Router) {
   }
 Add()
 {
-//Invoke angulsr  
-//if(confirm('Do you want to add this record')){
+  if(this.item.TaskName == undefined)
+{
+  this.Recordadded="Please enter Taskname";
+  return false; 
+}
+else if(this.item.ParentName == undefined)
+{
+  this.Recordadded="Please enter ParentTaskname";
+  return false;
+}
+else if(this.item.Priority == undefined)
+{
+  this.Recordadded="Please enter Priority";
+  return false;
+}
+else if(this.item.SDate == undefined)
+{
+  this.Recordadded="Please enter Start Date";
+  return false;
+}
+else if(this.item.EDate == undefined)
+{
+  this.Recordadded="Please enter End Date";
+  return false;
+}
 this._service.Add(this.item)
 .subscribe(i=>this.msg=i);
-console.log(this.msg);
-this.Recordadded="Record addedd successfully";
+//console.log(this.msg);
+this.Recordadded="Record added successfully";
+return true;
 }
 TaskName:string='';
 Reset()

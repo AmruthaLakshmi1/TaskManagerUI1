@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed} from '@angular/core/testing';
-
 import { ViewComponent } from './view.component';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';

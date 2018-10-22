@@ -34,14 +34,9 @@ Recordadded:string;
 //Invoke angulsr
 this.Recordadded="Record has been updated successfully";
 this._service.Edit(this.item)
-.subscribe(i=>
-  {
-    this._service.GetAll().subscribe(j=>this.list1=j);
-  }
-  );  
+.subscribe(i=>this.msg=i);  
   //this._router.navigateByUrl('view');
 //console.log(this.msg); 
-
 }
 Cancel()
 {
